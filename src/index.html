@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title><%- title %></title>
+  <meta name="description" content="">
+
+  <meta property="og:title" content="<%- title %>">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+  <meta property="og:description" content="">
+  <meta name="twitter:card" content="summary">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <%- include('/gtm-head') %>
+
+  <link rel="stylesheet" href="/assets/styles/main.scss">
+  <link rel="stylesheet" href="/assets/styles/pages/common/style.scss">
+  <link rel="stylesheet" href="/assets/styles/pages/index/style.scss">
+</head>
+
+<body>
+  <%- include('/gtm-body') %>
+
+  <div class="l-page">
+    <%- include('/header') %>
+
+    <main class="l-main">
+
+    </main><!-- .l-main -->
+
+    <%- include('/footer') %>
+  </div><!-- .l-page -->
+
+  <script src="/assets/scripts/pages/common.ts" defer></script>
+  <script src="/assets/scripts/pages/index.ts" defer></script>
+</body>
+
+</html>
