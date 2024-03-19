@@ -31,7 +31,7 @@ console.log(inputObject)
 
 export default defineConfig({
   root: config.srcDir,
-  base: '/',
+  base: config.baseDir,
   publicDir: config.publicDir,
   build: {
     outDir: config.distDir,

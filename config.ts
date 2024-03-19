@@ -1,7 +1,7 @@
 export default {
   srcDir: 'src',
   distDir: '../dist',
-  baseDir: '',
+  baseDir: '/',
   publicDir: '../public',
   proxy: {
     // '/': 'localhost'
