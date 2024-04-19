@@ -35,7 +35,11 @@ export default defineConfig({
   publicDir: config.publicDir,
   build: {
     outDir: config.distDir,
+    assetsDir: 'assets/scripts',
     emptyOutDir: true,
+    modulePreload: {
+      polyfill: false
+    },
     rollupOptions: {
       input: inputObject,
       output: {
