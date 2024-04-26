@@ -29,6 +29,8 @@ const inputArray = inputGlobs.map(glob => {
 const inputObject = Object.fromEntries(inputArray.flat())
 console.log(inputObject)
 
+const abstractsPath = path.resolve(__dirname, `${config.srcDir}/${common.dir.assets}/${common.dir.styles}/abstracts/import`)
+
 export default defineConfig({
   root: config.srcDir,
   base: config.baseDir,
@@ -60,14 +62,15 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        includePaths: common.styleIncludePaths
+        includePaths: common.styleIncludePaths,
+        additionalData: `@import "${abstractsPath}";`
       }
     }
   },
   plugins: [
     checker({ typescript: true }),
     sassGlobImports(),
-    liveReload([common.dir.includes]),
+    liveReload([common.dir.includes, common.ignorePaths.styles]),
     ViteEjsPlugin(
       config.siteData,
       {
