@@ -5,18 +5,36 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint:styles": "stylelint 'src/assets/styles/**/*.scss'",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "src/assets/styles/**/*.scss": "stylelint --fix"
   },
   "devDependencies": {
     "@types/node": "^20.11.29",
     "glob": "^10.3.10",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.0",
+    "prettier": "^3.5.3",
+    "prettier-plugin-organize-imports": "^4.1.0",
     "ress": "^5.0.2",
     "sass": "^1.72.0",
+    "stylelint": "^16.20.0",
+    "stylelint-config-prettier-scss": "^1.0.0",
+    "stylelint-config-property-sort-order-smacss": "^10.0.0",
+    "stylelint-config-recommended-scss": "^15.0.1",
+    "stylelint-order": "^7.0.0",
+    "stylelint-prettier": "^5.0.3",
     "typescript": "^5.2.2",
     "vite": "^5.1.6",
     "vite-plugin-checker": "^0.6.4",
     "vite-plugin-ejs": "^1.7.0",
     "vite-plugin-live-reload": "^3.0.3",
     "vite-plugin-sass-glob-import": "^3.0.2"
+  },
+  "volta": {
+    "node": "23.6.0"
   }
 }

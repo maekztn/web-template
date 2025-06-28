@@ -1,3 +1,5 @@
+@use '../abstracts/mixins' as m;
+
 .u-sr-only {
-  @include sr-only();
+  @include m.sr-only();
 }

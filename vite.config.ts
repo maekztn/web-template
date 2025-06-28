@@ -29,8 +29,6 @@ const inputArray = inputGlobs.map(glob => {
 const inputObject = Object.fromEntries(inputArray.flat())
 console.log(inputObject)
 
-const abstractsPath = path.resolve(__dirname, `${config.srcDir}/${common.dir.assets}/${common.dir.styles}/abstracts/import`)
-
 export default defineConfig({
   root: config.srcDir,
   base: config.baseDir,
@@ -53,6 +51,7 @@ export default defineConfig({
   server: {
     port: 3000,
     host: true,
+    open: true,
     strictPort: true,
     proxy: config.proxy,
     watch: {
@@ -62,8 +61,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        includePaths: common.styleIncludePaths,
-        additionalData: `@import "${abstractsPath}";`
+        includePaths: common.styleIncludePaths
       }
     }
   },

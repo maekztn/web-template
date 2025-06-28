@@ -1,23 +1,23 @@
-html {
-  min-width: map-get($grid-breakpoints, xs);
+@use 'sass:map';
+@use '../abstracts/config' as c;
+@use '../abstracts/mixins' as m;
 
-  @include media-breakpoint-up(md) {
-    min-width: map-get($grid-breakpoints, xl);
+html {
+  min-width: map.get(c.$grid-breakpoints, xs);
+
+  @include m.media-breakpoint-up(md) {
+    min-width: map.get(c.$grid-breakpoints, xl);
   }
 }
 
 body {
   font-family: 'YakuHanJP', 'Noto Sans JP', sans-serif;
-  font-size: 13px;
-  letter-spacing: 1px;
-  font-feature-settings: 'palt' 1;
+  font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 1px;
   text-rendering: optimizeLegibility;
-
-  @include media-breakpoint-up(md) {
-    font-size: 16px;
-  }
+  font-feature-settings: 'palt' 1;
 }
 
 a {

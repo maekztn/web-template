@@ -1,5 +1,8 @@
-@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
-  $min: breakpoint-min($name, $breakpoints);
+@use './config' as c;
+@use './functions' as f;
+
+@mixin media-breakpoint-up($name, $breakpoints: c.$grid-breakpoints) {
+  $min: f.breakpoint-min($name, $breakpoints);
 
   @if $min {
     @media (min-width: $min) {
@@ -10,8 +13,8 @@
   }
 }
 
-@mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {
-  $max: breakpoint-max($name, $breakpoints);
+@mixin media-breakpoint-down($name, $breakpoints: c.$grid-breakpoints) {
+  $max: f.breakpoint-max($name, $breakpoints);
 
   @if $max {
     @media (max-width: $max) {
@@ -25,10 +28,10 @@
 @mixin media-breakpoint-between(
   $lower,
   $upper,
-  $breakpoints: $grid-breakpoints
+  $breakpoints: c.$grid-breakpoints
 ) {
-  $min: breakpoint-min($lower, $breakpoints);
-  $max: breakpoint-max($upper, $breakpoints);
+  $min: f.breakpoint-min($lower, $breakpoints);
+  $max: f.breakpoint-max($upper, $breakpoints);
 
   @if $min != null and $max != null {
     @media (min-width: $min) and (max-width: $max) {
@@ -45,9 +48,9 @@
   }
 }
 
-@mixin media-breakpoint-only($name, $breakpoints: $grid-breakpoints) {
-  $min: breakpoint-min($name, $breakpoints);
-  $max: breakpoint-max($name, $breakpoints);
+@mixin media-breakpoint-only($name, $breakpoints: c.$grid-breakpoints) {
+  $min: f.breakpoint-min($name, $breakpoints);
+  $max: f.breakpoint-max($name, $breakpoints);
 
   @if $min != null and $max != null {
     @media (min-width: $min) and (max-width: $max) {
@@ -71,15 +74,15 @@
   padding: 0;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
   border: 0;
+  white-space: nowrap;
   clip-path: inset(50%);
 }
 
 @mixin clearfix {
   &::after {
+    content: '';
     display: block;
     clear: both;
-    content: '';
   }
 }
