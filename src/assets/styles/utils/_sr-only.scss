@@ -1,4 +1,4 @@
-@use '../abstracts/mixins' as m;
+@use '@/assets/styles/abstracts/mixins' as m;
 
 .u-sr-only {
   @include m.sr-only();

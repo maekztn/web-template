@@ -34,7 +34,7 @@ export default defineConfig({
   base: config.baseDir,
   publicDir: config.publicDir,
   build: {
-    outDir: config.distDir,
+    outDir: config.outDir,
     assetsDir: 'assets/scripts',
     emptyOutDir: true,
     modulePreload: {
@@ -46,6 +46,11 @@ export default defineConfig({
         entryFileNames: '[name].js',
         assetFileNames: '[name].[ext]'
       }
+    }
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, config.srcDir)
     }
   },
   server: {

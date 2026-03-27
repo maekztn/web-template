@@ -1,7 +1,7 @@
 @use 'sass:map';
-@use '../abstracts/config' as c;
-@use '../abstracts/functions' as f;
-@use '../abstracts/mixins' as m;
+@use '@/assets/styles/abstracts/config' as c;
+@use '@/assets/styles/abstracts/functions' as f;
+@use '@/assets/styles/abstracts/mixins' as m;
 
 // stylelint-disable declaration-no-important
 @each $breakpoint in map.keys(c.$grid-breakpoints) {
